@@ -1,0 +1,488 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #750b75, #4b0a4b);
+    direction: rtl;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.arabic-text {
+    direction: rtl; 
+    font-family: 'Arial', sans-serif; 
+}
+
+/* إخفاء العناصر عند التحميل */
+body > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+/* إخفاء كل العناصر في الصفحة مبدئيًا */
+body *:not(.members):not(.members *) {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* تعريف حركة الظهور التدريجي */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+}
+
+a {
+    color: #a01ba0;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #e275e2;
+}
+
+a:active {
+    color: red;
+}
+
+a:visited {
+    color: #916e91;
+} 
+
+/* Header Styles */
+header {
+    background: rgba(199, 59, 187, 0.9); 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    direction: ltr;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+header .logo img {
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Media Query للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex; /* إظهار البرقر منيو على الشاشات الصغيرة */
+    }
+
+    nav {
+        display: none; /* إخفاء القائمة على الشاشات الصغيرة */
+        position: absolute;
+        top: 60px; /* المسافة من أعلى الهيدر */
+        right: 4px;
+        background: rgba(199, 59, 187, 0.9);
+        border-radius: 5px;
+        padding: 4px;
+        direction: rtl;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* إظهار القائمة عند النقر على البرقر منيو */
+    nav.active {
+        display: block;
+    }
+} 
+
+
+/* البرقر منيو */
+.burger-menu {
+    display: none; /* إخفاء البرقر منيو بشكل افتراضي */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+/* تنسيقات القائمة */
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        width: 100%; 
+        padding: 10px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 15px;
+}
+
+.hero img {
+    position: relative; 
+    height: auto; 
+    object-fit: contain; 
+    width: 70%; 
+    object-fit: contain; 
+    border: 15px solid rgba(255, 255, 255, 0.9); 
+  border-radius: 15px;
+}
+
+.hero-video {
+    position: relative;  
+    top: 2px;  
+    width: 50%; 
+    height: 350px;
+    border: 10px solid rgba(255, 255, 255, 0.9); 
+    border-radius: 20px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+}
+
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 15px;
+}
+
+.about-img {
+    position: relative;  
+    height: auto; 
+    object-fit: contain; 
+    width: 70%; 
+    object-fit: contain; 
+    
+    border: 15px solid rgba(255, 255, 255, 0.9); 
+  border-radius: 15px;
+}
+
+.about .question:hover {
+    background-color: #5a125a; 
+    transform: scale(1.02); 
+}
+
+.question {
+    background-color: #751679;
+    padding: 20px;
+    margin-bottom: 15px;
+justify-content: space-between;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    font-size: 25px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+  .answer {
+    display: none;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-left: 2px solid #ccc;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 25px;
+    color: #4b0082;
+    width: 60%; 
+    margin: 0 auto;  
+  }
+  .answer ul {
+    list-style-position: inside;
+    padding-right: 10px; 
+    text-align: right; 
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .question, .answer {
+        width: 95%; 
+        font-size: 20px; 
+    }
+}
+
+/* تحسينات للشاشات الكبيرة */
+@media (min-width: 1200px) {
+    .question, .answer {
+        width: 70%; 
+    }
+}
+
+ /* تنسيق رمز الزائد */
+ .plus-sign {
+    font-size: 30px;
+  }
+  .question:hover .plus-sign {
+    transform: rotate(45deg); /* تدوير الرمز 45 درجة */
+}
+
+/* Member Section*/
+.member {  
+    background: rgba(255, 255, 255, 0.9);
+    color: #4b0082;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s ease;
+    width: 500px;
+    margin: 5px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+.member img {
+    width: 76px;
+    height: auto; 
+    object-fit: contain; /* التأكد من أن الصورة لا تتشوه */
+    
+}
+
+.members {
+    padding: 80px 20px;
+    text-align: center; 
+}
+
+.member:hover {
+    transform: scale(1.05) !important; 
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.member-text {
+    text-align: center;
+    color: #ffffff;
+}
+
+.member-text a {
+    color: #ffffff;
+    text-decoration: underline; 
+   
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .member {
+        max-width: 80%; 
+    }
+
+}
+
+@media (max-width: 480px) {
+    .member {
+        padding: 15px;  
+    }
+
+}
+
+/* Projects Section */
+.projects {
+    padding: 20px 20px; 
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; 
+}
+
+.project { 
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.project img { 
+    max-width: 90%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.project:hover {
+    transform: scale(1.05) !important; 
+    
+}
+
+/* Footer  */
+footer {
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    background: rgba(199, 59, 187, 0.9); 
+}
+
+footer .social-icons {
+    margin-bottom: 10px;
+}
+
+footer .social-icons a {
+    font-size: 28px; 
+    margin: 0 10px;
+    color: #fff;
+}
+
+.social-icons a:hover {
+    color: #eeeaea !important; 
+}
+
+.slide:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* إضافة ظل */
+}
+
+footer p {
+    font-size: 16px;
+    color: #fff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero iframe {
+        height: 300px;
+    }
+
+    .member-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .hero h3 {
+        font-size: 18px;
+    }
+
+    .about h1 {
+        font-size: 28px;
+    }
+
+    .about h3 {
+        font-size: 18px;
+    }
+
+    .members h1 {
+        font-size: 28px;
+    }
+
+    .projects h2 {
+        font-size: 28px;
+    }
+} 
